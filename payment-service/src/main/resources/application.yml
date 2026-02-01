@@ -1,0 +1,52 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/movie_ticketing_platform  # Database URL
+    username: postgres                               # Database username
+    password: postgres                           # Database password
+    driver-class-name: org.postgresql.Driver       # PostgreSQL JDBC driver
+    hikari:
+      pool-name: HikariCP                          # HikariCP connection pool (default in Spring Boot)
+      maximum-pool-size: 10                        # Maximum number of connections in the pool
+      minimum-idle: 5                              # Minimum number of idle connections in the pool
+      idle-timeout: 30000                          # Maximum idle time for a connection in the pool
+      max-lifetime: 60000                          # Maximum lifetime of a connection
+  jpa:
+    hibernate:
+      ddl-auto: update                             # Hibernate DDL mode (e.g., 'none', 'update', 'create', 'create-drop')
+    properties:
+      hibernate:
+        jdbc.time_zone: UTC
+      format_sql: true                             # Format SQL queries for readability
+    database-platform: org.hibernate.dialect.PostgreSQLDialect  # Set PostgreSQL dialect for Hibernate
+    show-sql: true
+  application:
+    name: booking-service
+# Configure server (optional, set the port)
+server:
+  port: 8902
+  servlet:
+    context-path: /movie
+
+# Actuator settings
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+      base-path: /actuator
+
+# Logging configuration
+logging:
+  level:
+    root: INFO
+    org.kre: DEBUG                # DEBUG level for 'com.example' package
+    org.springframework: WARN
+    org.hibernate.SQL: DEBUG                      # Log SQL queries
+    org.hibernate.type.descriptor.sql.BasicBinder: TRACE  # Log SQL parameter bindings
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} - %msg%n"  # Customize the log pattern for console output
+  logback:
+    rollingpolicy:
+      max-file-size: 10MB
+      max-history: 30
+      file-name-pattern: logs/${spring.application.name}-%d{yyyy-MM-dd}-%i.log

@@ -1,0 +1,19 @@
+errors:
+  validation:
+    INVALID_ARGUMENT:
+      code: 1001
+      message: "Invalid input provided"
+    MISSING_FIELD:
+      code: 1002
+      message: "Required field is missing"
+  domain:
+    USER_NOT_FOUND:
+      code: 2001
+      message: "User not found"
+    ORDER_NOT_FOUND:
+      code: 2002
+      message: "Order not found"
+  internal:
+    INTERNAL_ERROR:
+      code: 3001
+      message: "An unexpected internal error occurred"

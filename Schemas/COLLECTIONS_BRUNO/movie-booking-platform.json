@@ -1,0 +1,996 @@
+{
+  "name": "movie-booking-platform",
+  "version": "1",
+  "items": [
+    {
+      "type": "folder",
+      "name": "theatre",
+      "filename": "theatre",
+      "seq": 2,
+      "examples": [],
+      "root": {
+        "request": {
+          "auth": {
+            "mode": "inherit"
+          }
+        },
+        "meta": {
+          "name": "theatre",
+          "seq": 2
+        }
+      },
+      "items": [
+        {
+          "type": "http",
+          "name": "Theatre-Onboarding",
+          "filename": "Theatre-Onboarding.bru",
+          "seq": 1,
+          "settings": {
+            "encodeUrl": true,
+            "timeout": 0
+          },
+          "tags": [],
+          "examples": [],
+          "request": {
+            "url": "http://localhost:8901/movie/api/v1/theatres/onboard",
+            "method": "POST",
+            "headers": [],
+            "params": [],
+            "body": {
+              "mode": "json",
+              "json": "{\n  \"name\" : \"prasad\",\n  \"city\": \"hyd\",\n  \"status\" : \"PENDING_APPROVAL\",\n  \"createdAt\" : \"\",\n  \"screens\" : [{\n    \"name\" : \"screen_1\",\n    \"capacity\" : 500,\n    \"layout\" : \"70mm\"\n  }]\n}",
+              "formUrlEncoded": [],
+              "multipartForm": [],
+              "file": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "docs": "",
+            "auth": {
+              "mode": "inherit"
+            }
+          }
+        },
+        {
+          "type": "http",
+          "name": "Theatre-Details",
+          "filename": "Theatre-Details.bru",
+          "seq": 2,
+          "settings": {
+            "encodeUrl": true,
+            "timeout": 0
+          },
+          "tags": [],
+          "examples": [],
+          "request": {
+            "url": "http://localhost:8901/movie/api/v1/theatres/details?id=7eab9039-cb40-463e-8cd6-fee2559736a0",
+            "method": "GET",
+            "headers": [],
+            "params": [
+              {
+                "name": "id",
+                "value": "7eab9039-cb40-463e-8cd6-fee2559736a0",
+                "type": "query",
+                "enabled": true
+              }
+            ],
+            "body": {
+              "mode": "none",
+              "formUrlEncoded": [],
+              "multipartForm": [],
+              "file": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "docs": "",
+            "auth": {
+              "mode": "inherit"
+            }
+          }
+        },
+        {
+          "type": "http",
+          "name": "Theatre-Delete",
+          "filename": "Theatre-Delete.bru",
+          "seq": 3,
+          "settings": {
+            "encodeUrl": true,
+            "timeout": 0
+          },
+          "tags": [],
+          "examples": [],
+          "request": {
+            "url": "http://localhost:8901/movie/api/v1/theatres/details?id=0184d2a1-08e1-480b-a6ac-c5a9b4a9ef81",
+            "method": "DELETE",
+            "headers": [],
+            "params": [
+              {
+                "name": "id",
+                "value": "0184d2a1-08e1-480b-a6ac-c5a9b4a9ef81",
+                "type": "query",
+                "enabled": true
+              }
+            ],
+            "body": {
+              "mode": "none",
+              "formUrlEncoded": [],
+              "multipartForm": [],
+              "file": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "docs": "",
+            "auth": {
+              "mode": "inherit"
+            }
+          }
+        },
+        {
+          "type": "http",
+          "name": "Theatre-update",
+          "filename": "Theatre-update.bru",
+          "seq": 3,
+          "settings": {
+            "encodeUrl": true,
+            "timeout": 0
+          },
+          "tags": [],
+          "examples": [],
+          "request": {
+            "url": "http://localhost:8901/movie/api/v1/theatres/onboard",
+            "method": "PUT",
+            "headers": [],
+            "params": [],
+            "body": {
+              "mode": "json",
+              "json": "{\n  \"uuid\" : \"0184d2a1-08e1-480b-a6ac-c5a9b4a9ef81\",\n  \"name\" : \"rakhi\",\n  \"city\": \"hyd\",\n  \"status\" : \"APPROVED\",\n  \"createdAt\" : \"\",\n  \"screens\" : [{\n    \"name\" : \"screen_1\",\n    \"capacity\" : 500,\n    \"layout\" : \"70mm\"\n  }]\n}",
+              "formUrlEncoded": [],
+              "multipartForm": [],
+              "file": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "docs": "",
+            "auth": {
+              "mode": "inherit"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "type": "folder",
+      "name": "screens",
+      "filename": "screens",
+      "seq": 2,
+      "examples": [],
+      "root": {
+        "request": {
+          "auth": {
+            "mode": "inherit"
+          }
+        },
+        "meta": {
+          "name": "screens",
+          "seq": 2
+        }
+      },
+      "items": [
+        {
+          "type": "http",
+          "name": "screens-add",
+          "filename": "screens-add.bru",
+          "seq": 1,
+          "settings": {
+            "encodeUrl": true,
+            "timeout": 0
+          },
+          "tags": [],
+          "examples": [],
+          "request": {
+            "url": "http://localhost:8901/movie/api/v1/screens/add",
+            "method": "POST",
+            "headers": [],
+            "params": [],
+            "body": {
+              "mode": "json",
+              "json": "{\n  \"theatreId\": \"bdec40a1-9bef-4b29-8d8f-69ec4bd247a0\",\n  \"name\": \"screen_3\",\n  \"capacity\": 500,\n  \"layout\": \"70mm\"\n}",
+              "formUrlEncoded": [],
+              "multipartForm": [],
+              "file": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "docs": "",
+            "auth": {
+              "mode": "inherit"
+            }
+          }
+        },
+        {
+          "type": "http",
+          "name": "screens-get",
+          "filename": "screens-get.bru",
+          "seq": 2,
+          "settings": {
+            "encodeUrl": true,
+            "timeout": 0
+          },
+          "tags": [],
+          "examples": [],
+          "request": {
+            "url": "http://localhost:8901/movie/api/v1/screens/details?id=8cfabda2-521f-4f32-90d9-9457e407d08a",
+            "method": "GET",
+            "headers": [],
+            "params": [
+              {
+                "name": "id",
+                "value": "8cfabda2-521f-4f32-90d9-9457e407d08a",
+                "type": "query",
+                "enabled": true
+              }
+            ],
+            "body": {
+              "mode": "none",
+              "formUrlEncoded": [],
+              "multipartForm": [],
+              "file": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "docs": "",
+            "auth": {
+              "mode": "inherit"
+            }
+          }
+        },
+        {
+          "type": "http",
+          "name": "screens-update",
+          "filename": "screens-update.bru",
+          "seq": 3,
+          "settings": {
+            "encodeUrl": true,
+            "timeout": 0
+          },
+          "tags": [],
+          "examples": [],
+          "request": {
+            "url": "http://localhost:8901/movie/api/v1/screens/update",
+            "method": "PUT",
+            "headers": [],
+            "params": [],
+            "body": {
+              "mode": "json",
+              "json": "{\n  \"theatreId\": \"bdec40a1-9bef-4b29-8d8f-69ec4bd247a0\",\n  \"uuid\": \"8cfabda2-521f-4f32-90d9-9457e407d08a\",\n  \"name\": \"screen_3\",\n  \"capacity\": 500,\n  \"layout\": \"90mm\"\n}",
+              "formUrlEncoded": [],
+              "multipartForm": [],
+              "file": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "docs": "",
+            "auth": {
+              "mode": "inherit"
+            }
+          }
+        },
+        {
+          "type": "http",
+          "name": "screens-delete",
+          "filename": "screens-delete.bru",
+          "seq": 4,
+          "settings": {
+            "encodeUrl": true,
+            "timeout": 0
+          },
+          "tags": [],
+          "examples": [],
+          "request": {
+            "url": "",
+            "method": "DELETE",
+            "headers": [],
+            "params": [],
+            "body": {
+              "mode": "none",
+              "formUrlEncoded": [],
+              "multipartForm": [],
+              "file": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "docs": "",
+            "auth": {
+              "mode": "inherit"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "type": "folder",
+      "name": "showtimes",
+      "filename": "showtimes",
+      "seq": 3,
+      "examples": [],
+      "root": {
+        "request": {
+          "auth": {
+            "mode": "inherit"
+          }
+        },
+        "meta": {
+          "name": "showtimes",
+          "seq": 3
+        }
+      },
+      "items": [
+        {
+          "type": "http",
+          "name": "showtimes-add",
+          "filename": "showtimes-add.bru",
+          "seq": 1,
+          "settings": {
+            "encodeUrl": true,
+            "timeout": 0
+          },
+          "tags": [],
+          "examples": [],
+          "request": {
+            "url": "http://localhost:8901/movie/api/v1/showtimes/add",
+            "method": "POST",
+            "headers": [],
+            "params": [],
+            "body": {
+              "mode": "json",
+              "json": "{\n  \"screenId\":\"5bf2b8ac-0fa7-44c4-9ddf-14aa966881ed\",\n  \"movieId\":\"12cebd40-b316-4b37-83af-4654a95a3948\",\n    \"dateTime\":\"2026-03-01T16:12:20.839439\",\n    \"price\":200.00\n}",
+              "formUrlEncoded": [],
+              "multipartForm": [],
+              "file": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "docs": "",
+            "auth": {
+              "mode": "inherit"
+            }
+          }
+        },
+        {
+          "type": "http",
+          "name": "showtimes-get",
+          "filename": "showtimes-get.bru",
+          "seq": 2,
+          "settings": {
+            "encodeUrl": true,
+            "timeout": 0
+          },
+          "tags": [],
+          "examples": [],
+          "request": {
+            "url": "http://localhost:8901/movie/api/v1/showtimes/details?id=1739db43-be27-43c1-aa41-cece0e4964cb",
+            "method": "GET",
+            "headers": [],
+            "params": [
+              {
+                "name": "id",
+                "value": "1739db43-be27-43c1-aa41-cece0e4964cb",
+                "type": "query",
+                "enabled": true
+              }
+            ],
+            "body": {
+              "mode": "none",
+              "formUrlEncoded": [],
+              "multipartForm": [],
+              "file": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "docs": "",
+            "auth": {
+              "mode": "inherit"
+            }
+          }
+        },
+        {
+          "type": "http",
+          "name": "showtimes-update",
+          "filename": "showtimes-update.bru",
+          "seq": 3,
+          "settings": {
+            "encodeUrl": true,
+            "timeout": 0
+          },
+          "tags": [],
+          "examples": [],
+          "request": {
+            "url": "http://localhost:8901/movie/api/v1/showtimes/update",
+            "method": "PUT",
+            "headers": [],
+            "params": [],
+            "body": {
+              "mode": "json",
+              "json": "{\n  \"uuid\":\"1739db43-be27-43c1-aa41-cece0e4964cb\",\n  \"screenId\":\"5bf2b8ac-0fa7-44c4-9ddf-14aa966881ed\",\n  \"movieId\":\"12cebd40-b316-4b37-83af-4654a95a3948\",\n    \"dateTime\":\"2026-03-01T16:12:20.839439\",\n    \"price\":300.00\n}",
+              "formUrlEncoded": [],
+              "multipartForm": [],
+              "file": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "docs": "",
+            "auth": {
+              "mode": "inherit"
+            }
+          }
+        },
+        {
+          "type": "http",
+          "name": "showtimes-delete",
+          "filename": "showtimes-delete.bru",
+          "seq": 4,
+          "settings": {
+            "encodeUrl": true,
+            "timeout": 0
+          },
+          "tags": [],
+          "examples": [],
+          "request": {
+            "url": "",
+            "method": "DELETE",
+            "headers": [],
+            "params": [],
+            "body": {
+              "mode": "none",
+              "formUrlEncoded": [],
+              "multipartForm": [],
+              "file": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "docs": "",
+            "auth": {
+              "mode": "inherit"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "type": "folder",
+      "name": "movie",
+      "filename": "movie",
+      "seq": 4,
+      "examples": [],
+      "root": {
+        "request": {
+          "auth": {
+            "mode": "inherit"
+          }
+        },
+        "meta": {
+          "name": "movie",
+          "seq": 4
+        }
+      },
+      "items": [
+        {
+          "type": "http",
+          "name": "movie-add",
+          "filename": "movie-add.bru",
+          "seq": 1,
+          "settings": {
+            "encodeUrl": true,
+            "timeout": 0
+          },
+          "tags": [],
+          "examples": [],
+          "request": {
+            "url": "http://localhost:8901/movie/api/v1/movies/add",
+            "method": "POST",
+            "headers": [],
+            "params": [],
+            "body": {
+              "mode": "json",
+              "json": "{\n  \"title\":\"CLASH\",\n  \"description\":\"invetsiagtion crime thriller\",\n  \"genres\": [\"crime\", \"thriller\"],\n  \"durationMinutes\":3,\n  \"releaseDate\":\"2026-02-01T16:12:20.839439\",\n  \"rating\":3.5,\n  \"language\":\"english\",\n  \"showTimes\":[{\n    \"screenId\":\"5bf2b8ac-0fa7-44c4-9ddf-14aa966881ed\",\n    \"dateTime\":\"2026-02-01T16:12:20.839439\",\n    \"price\":100.00\n  }]\n  \n}",
+              "formUrlEncoded": [],
+              "multipartForm": [],
+              "file": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "docs": "",
+            "auth": {
+              "mode": "inherit"
+            }
+          }
+        },
+        {
+          "type": "http",
+          "name": "movie-get",
+          "filename": "movie-get.bru",
+          "seq": 2,
+          "settings": {
+            "encodeUrl": true,
+            "timeout": 0
+          },
+          "tags": [],
+          "examples": [],
+          "request": {
+            "url": "",
+            "method": "GET",
+            "headers": [],
+            "params": [],
+            "body": {
+              "mode": "none",
+              "formUrlEncoded": [],
+              "multipartForm": [],
+              "file": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "docs": "",
+            "auth": {
+              "mode": "inherit"
+            }
+          }
+        },
+        {
+          "type": "http",
+          "name": "movie-update",
+          "filename": "movie-update.bru",
+          "seq": 3,
+          "settings": {
+            "encodeUrl": true,
+            "timeout": 0
+          },
+          "tags": [],
+          "examples": [],
+          "request": {
+            "url": "http://localhost:8901/movie/api/v1/movies/update",
+            "method": "PUT",
+            "headers": [],
+            "params": [],
+            "body": {
+              "mode": "json",
+              "json": "{\n  \"uuid\":\"12cebd40-b316-4b37-83af-4654a95a3948\",\n  \"title\":\"BOSH\",\n  \"description\":\"invetsiagtion crime thriller\",\n  \"genres\": [\"crime\", \"thriller\"],\n  \"durationMinutes\":3,\n  \"releaseDate\":\"2026-02-01T16:12:20.839439\",\n  \"rating\":3.5,\n  \"language\":\"english\",\n  \"showTimes\":[{\n    \"screenId\":\"5bf2b8ac-0fa7-44c4-9ddf-14aa966881ed\",\n    \"dateTime\":\"2026-02-01T16:12:20.839439\",\n    \"price\":100.00\n  }]\n  \n}",
+              "formUrlEncoded": [],
+              "multipartForm": [],
+              "file": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "docs": "",
+            "auth": {
+              "mode": "inherit"
+            }
+          }
+        },
+        {
+          "type": "http",
+          "name": "movie-delete",
+          "filename": "movie-delete.bru",
+          "seq": 4,
+          "settings": {
+            "encodeUrl": true,
+            "timeout": 0
+          },
+          "tags": [],
+          "examples": [],
+          "request": {
+            "url": "http://localhost:8901/movie/api/v1/movies/details?id=570c44d5-53b7-4c2f-9fbe-d4c873ec2ede",
+            "method": "DELETE",
+            "headers": [],
+            "params": [
+              {
+                "name": "id",
+                "value": "570c44d5-53b7-4c2f-9fbe-d4c873ec2ede",
+                "type": "query",
+                "enabled": true
+              }
+            ],
+            "body": {
+              "mode": "none",
+              "formUrlEncoded": [],
+              "multipartForm": [],
+              "file": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "docs": "",
+            "auth": {
+              "mode": "inherit"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "type": "folder",
+      "name": "user",
+      "filename": "user",
+      "seq": 5,
+      "examples": [],
+      "root": {
+        "request": {
+          "auth": {
+            "mode": "inherit"
+          }
+        },
+        "meta": {
+          "name": "user",
+          "seq": 5
+        }
+      },
+      "items": [
+        {
+          "type": "http",
+          "name": "user-add",
+          "filename": "user-add.bru",
+          "seq": 1,
+          "settings": {
+            "encodeUrl": true,
+            "timeout": 0
+          },
+          "tags": [],
+          "examples": [],
+          "request": {
+            "url": "http://localhost:8901/movie/api/v1/users/add",
+            "method": "POST",
+            "headers": [],
+            "params": [],
+            "body": {
+              "mode": "json",
+              "json": "{\n  \"email\":\"abc@gmail.com\",\n  \"name\":\"kumar\",\n  \"city\":\"hyd\"\n}",
+              "formUrlEncoded": [],
+              "multipartForm": [],
+              "file": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "docs": "",
+            "auth": {
+              "mode": "inherit"
+            }
+          }
+        },
+        {
+          "type": "http",
+          "name": "user-get",
+          "filename": "user-get.bru",
+          "seq": 2,
+          "settings": {
+            "encodeUrl": true,
+            "timeout": 0
+          },
+          "tags": [],
+          "examples": [],
+          "request": {
+            "url": "http://localhost:8901/movie/api/v1/users/details?id=50ee3589-82f1-49e0-9254-179bc261be04",
+            "method": "GET",
+            "headers": [],
+            "params": [
+              {
+                "name": "id",
+                "value": "50ee3589-82f1-49e0-9254-179bc261be04",
+                "type": "query",
+                "enabled": true
+              }
+            ],
+            "body": {
+              "mode": "none",
+              "formUrlEncoded": [],
+              "multipartForm": [],
+              "file": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "docs": "",
+            "auth": {
+              "mode": "inherit"
+            }
+          }
+        },
+        {
+          "type": "http",
+          "name": "user-update",
+          "filename": "user-update.bru",
+          "seq": 3,
+          "settings": {
+            "encodeUrl": true,
+            "timeout": 0
+          },
+          "tags": [],
+          "examples": [],
+          "request": {
+            "url": "http://localhost:8901/movie/api/v1/users/cancel",
+            "method": "PUT",
+            "headers": [],
+            "params": [],
+            "body": {
+              "mode": "json",
+              "json": "{\n  \"uuid\": \"50ee3589-82f1-49e0-9254-179bc261be04\",\n  \"email\":\"abc@gmail.com\",\n  \"name\":\"kumar\",\n  \"city\":\"hyd\"\n}",
+              "formUrlEncoded": [],
+              "multipartForm": [],
+              "file": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "docs": "",
+            "auth": {
+              "mode": "inherit"
+            }
+          }
+        },
+        {
+          "type": "http",
+          "name": "user-delete",
+          "filename": "user-delete.bru",
+          "seq": 4,
+          "settings": {
+            "encodeUrl": true,
+            "timeout": 0
+          },
+          "tags": [],
+          "examples": [],
+          "request": {
+            "url": "http://localhost:8901/movie/api/v1/users/details?id=50ee3589-82f1-49e0-9254-179bc261be04",
+            "method": "DELETE",
+            "headers": [],
+            "params": [
+              {
+                "name": "id",
+                "value": "50ee3589-82f1-49e0-9254-179bc261be04",
+                "type": "query",
+                "enabled": true
+              }
+            ],
+            "body": {
+              "mode": "none",
+              "formUrlEncoded": [],
+              "multipartForm": [],
+              "file": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "docs": "",
+            "auth": {
+              "mode": "inherit"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "type": "folder",
+      "name": "booking",
+      "filename": "booking",
+      "seq": 6,
+      "examples": [],
+      "root": {
+        "request": {
+          "auth": {
+            "mode": "inherit"
+          }
+        },
+        "meta": {
+          "name": "booking",
+          "seq": 6
+        }
+      },
+      "items": [
+        {
+          "type": "http",
+          "name": "booking-create",
+          "filename": "booking-create.bru",
+          "seq": 1,
+          "settings": {
+            "encodeUrl": true,
+            "timeout": 0
+          },
+          "tags": [],
+          "examples": [],
+          "request": {
+            "url": "http://localhost:8901/movie/api/v1/bookings/create",
+            "method": "POST",
+            "headers": [],
+            "params": [],
+            "body": {
+              "mode": "json",
+              "json": "{\n  \"seatId\" : \"L-105\",\n  \"status\":\"CONFIRMED\",\n  \"showTime\" : {\n  \"uuid\":\"1739db43-be27-43c1-aa41-cece0e4964cb\",\n  \"screenId\":\"5bf2b8ac-0fa7-44c4-9ddf-14aa966881ed\",\n  \"movieId\":\"12cebd40-b316-4b37-83af-4654a95a3948\",\n    \"dateTime\":\"2026-03-01T16:12:20.839439\",\n    \"price\":300.00\n  },\n  \"user\": { \n    \"uuid\": \"6cbab42d-9c6a-4b22-be1c-76f6eec08dd0\",\n  \"email\":\"xyz@gmail.com\",\n  \"name\":\"kumar1\",\n  \"city\":\"hyd\"\n  }\n}",
+              "formUrlEncoded": [],
+              "multipartForm": [],
+              "file": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "docs": "",
+            "auth": {
+              "mode": "inherit"
+            }
+          }
+        },
+        {
+          "type": "http",
+          "name": "booking-get",
+          "filename": "booking-get.bru",
+          "seq": 2,
+          "settings": {
+            "encodeUrl": true,
+            "timeout": 0
+          },
+          "tags": [],
+          "examples": [],
+          "request": {
+            "url": "http://localhost:8901/movie/api/v1/bookings/details?uuid=cf613e7b-890b-4ac9-9f9a-52972762ef34",
+            "method": "GET",
+            "headers": [],
+            "params": [
+              {
+                "name": "uuid",
+                "value": "cf613e7b-890b-4ac9-9f9a-52972762ef34",
+                "type": "query",
+                "enabled": true
+              }
+            ],
+            "body": {
+              "mode": "none",
+              "formUrlEncoded": [],
+              "multipartForm": [],
+              "file": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "docs": "",
+            "auth": {
+              "mode": "inherit"
+            }
+          }
+        },
+        {
+          "type": "http",
+          "name": "booking-cancel",
+          "filename": "booking-cancel.bru",
+          "seq": 3,
+          "settings": {
+            "encodeUrl": true,
+            "timeout": 0
+          },
+          "tags": [],
+          "examples": [],
+          "request": {
+            "url": "http://localhost:8901/movie/api/v1/bookings/cancel?uuid=cf613e7b-890b-4ac9-9f9a-52972762ef34",
+            "method": "PUT",
+            "headers": [],
+            "params": [
+              {
+                "name": "uuid",
+                "value": "cf613e7b-890b-4ac9-9f9a-52972762ef34",
+                "type": "query",
+                "enabled": true
+              }
+            ],
+            "body": {
+              "mode": "json",
+              "json": "",
+              "formUrlEncoded": [],
+              "multipartForm": [],
+              "file": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "docs": "",
+            "auth": {
+              "mode": "inherit"
+            }
+          }
+        },
+        {
+          "type": "http",
+          "name": "bokking-delete",
+          "filename": "bokking-delete.bru",
+          "seq": 4,
+          "settings": {
+            "encodeUrl": true,
+            "timeout": 0
+          },
+          "tags": [],
+          "examples": [],
+          "request": {
+            "url": "http://localhost:8901/movie/api/v1/bookings/details?uuid=cf613e7b-890b-4ac9-9f9a-52972762ef34",
+            "method": "DELETE",
+            "headers": [],
+            "params": [
+              {
+                "name": "uuid",
+                "value": "cf613e7b-890b-4ac9-9f9a-52972762ef34",
+                "type": "query",
+                "enabled": true
+              }
+            ],
+            "body": {
+              "mode": "none",
+              "formUrlEncoded": [],
+              "multipartForm": [],
+              "file": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "docs": "",
+            "auth": {
+              "mode": "inherit"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "activeEnvironmentUid": "UHlSOHS2sEvLtIUGdkb1Y",
+  "environments": [
+    {
+      "variables": [],
+      "name": "local"
+    }
+  ],
+  "brunoConfig": {
+    "version": "1",
+    "name": "movie-booking-platform",
+    "type": "collection",
+    "ignore": [
+      "node_modules",
+      ".git"
+    ],
+    "size": 0,
+    "filesCount": 0
+  },
+  "exportedAt": "2026-02-01T17:04:14.373Z",
+  "exportedUsing": "Bruno/3.0.2"
+}
