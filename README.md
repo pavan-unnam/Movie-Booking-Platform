@@ -1,4 +1,4 @@
-This project is Movie-booking platofrm which build by grtalde with multi moudle project
+This project is Movie-booking platofrm which build by gradle with multi moudle project
 actual idea is build mutiple modules like theater service will habdle thetares and screens
 , movie service will handle movies & showtimes, user services will handle user and roles,
 booking servcie will handle booking movie tciket and canceling.
